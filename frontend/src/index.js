@@ -5,15 +5,38 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { ApolloClient, InMemoryCache, ApolloProvider, gql , HttpLink } from '@apollo/client';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 
+// const client = new ApolloClient({
+//   uri: 'http://localhost:8084/',
+//   //uri: 'https://flyby-gateway.herokuapp.com/',
+//   fetchOptions: {
+//     mode: 'no-cors',
+//   },
+//   cache: new InMemoryCache(),
+// });
+
+const client = new ApolloClient({
+  link: new HttpLink({
+      uri: 'http://localhost:8084/graphql',
+      // fetchOptions: {
+      //   mode: 'no-cors',
+        
+      // },
+      
+  }),cache: new InMemoryCache()
+});
+
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <ApolloProvider client={client}>
+    <Provider store={store} >
       <App />
     </Provider>
+    </ApolloProvider>
   </React.StrictMode>
 );
 

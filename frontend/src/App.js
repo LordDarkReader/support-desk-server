@@ -9,6 +9,7 @@ import NewTicket from './pages/NewTicket';
 import PrivateRoute from './components/PrivateRoute';
 import Tickets from './pages/Tickets';
 import Ticket from './pages/Ticket';
+import TestGraphql from './pages/TestGraphql';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<Home/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<Register/>} />
+          <Route path='/test-graphql' element={<TestGraphql/>} />
           <Route path='/new-ticket' element={<PrivateRoute/>}>
             <Route path='/new-ticket' element={<NewTicket/>} />
           </Route>

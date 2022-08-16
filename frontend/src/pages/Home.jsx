@@ -16,6 +16,10 @@ function Home() {
         <Link to='/tickets' className='btn btn-block'>
             <FaTicketAlt /> View my ticket
         </Link>
+
+        <Link to='/test-graphql' className='btn btn-block'>
+            <FaTicketAlt /> GraphQL test
+        </Link>
     </>
     )
 }
