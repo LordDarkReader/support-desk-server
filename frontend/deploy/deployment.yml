@@ -15,7 +15,7 @@ spec:
       containers:
         - name: support-desk
           image: support-desk:0.1
-          imagePullPolicy: Never
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
 ---
